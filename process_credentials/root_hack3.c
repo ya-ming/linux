@@ -23,8 +23,8 @@ int main(int argc, char **argv)
 
   system("apt-get check");
 
-  // test 1 - set euid to 0, but don't change the ruid
-  // "apt-get check" failed due to permission denied
+  // test 2 - set ruid and euid = 0
+  // "apt-get check" success
   if (setreuid(0, saved_euid) == -1)
     WARN("setreuid(0, saved_euid) failed!\n");
 

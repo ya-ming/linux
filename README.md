@@ -12,3 +12,14 @@ cd process_credentials
 ./show_setuidgid.sh
 ./root_hack3.sh
 ```
+
+## Process Capabilities
+
+Execute the following script to evaluate the commands and output
+
+**In set_pcap2.c, by default, capability sets are lost across an UID transition, use prctl(PR_SET_KEEPCAPS, 1, 0, 0, 0); to keep it.**
+
+```sh
+cd process_capabilities
+./commands.sh
+```
